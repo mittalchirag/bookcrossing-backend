@@ -1,0 +1,87 @@
+FORMAT: 1A
+HOST: http://api.bookcrossing.tech/
+
+# blur.tech
+
+BookCrossing - 
+
+### Books [/books]
+
+### Get Book By ID [GET]
++ Response 200 (application/json)
+
+        [
+            {
+                "status": "OK",
+                "data": [
+                    {
+                        "id": "3",
+                        "label": "book3",
+                        "author": "author1",
+                        "owner": "2",
+                        "reciever": "1"
+                        "genres": ["1","4","8"]
+                        
+                    }
+                ]
+            }
+        ]
+
+
+### BookShelf [/bookshelf]
+
+### List Recieved Books [GET/bookshelf/received/1]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "status": "OK",
+                "data": [
+                    {
+                        "id": "1",
+                        "label": "book1",
+                        "author": "author1",
+                        "owner": "2",
+                        "reciever": "1"
+                        "genres": ["1","4","8"]
+                        
+                    }, {
+                        "id": "2",
+                        "label": "book2",
+                        "author": "author1",
+                        "owner": "3",
+                        "reciever": "1"
+                        "genres": ["1","7"]
+                    }
+                ]
+            }
+        ]
+        
+
+### Get Shared Books [GET/bookshelf/shared/1]
++ Response 200 (application/json)
+
+        [
+            {
+                "status": "OK",
+                "data": [
+                    {
+                        "id": "1",
+                        "label": "book1",
+                        "author": "author1",
+                        "owner": "2",
+                        "reciever": "1"
+                        "genres": ["1","4","8"]
+                        
+                    }, {
+                        "id": "2",
+                        "label": "book2",
+                        "author": "author1",
+                        "owner": "3",
+                        "reciever": "1"
+                        "genres": ["1","7"]
+                    }
+                ]
+            }
+        ]
