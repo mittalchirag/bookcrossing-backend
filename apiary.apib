@@ -7,26 +7,101 @@ BookCrossing -
 
 ### Books [/books]
 
-### Get Book By ID [GET]
+### Get Book By ID [GET/books/3]
 + Response 200 (application/json)
 
-        [
-            {
-                "status": "OK",
-                "data": [
-                    {
-                        "id": "3",
-                        "label": "book3",
-                        "author": "author1",
-                        "owner": "2",
-                        "reciever": "1"
-                        "genres": ["1","4","8"]
-                        
-                    }
-                ]
-            }
-        ]
+    
+        {
+            "status": "OK",
+            "data": [
+                {
+                    "id": "3",
+                    "label": "book3",
+                    "author": "author1",
+                    "owner": "2",
+                    "reciever": ""
+                    "genres": ["1","4","8"]
+                    
+                }
+            ]
+        }
+        
+### Get Book By Author [GET/books/author/author1]
 
++ Response 200 (application/json)
+
+        {
+            "status": "OK",
+            "data": [
+                {
+                    "id": "3",
+                    "label": "book3",
+                    "author": "author1",
+                    "owner": "2",
+                    "reciever": ""
+                    "genres": ["1","4","8"]
+                    
+                }
+            ]
+        }
+        
+### Search Book [GET /books/search/guide]
+You will also search by author.
++ Response 200 (application/json)
+
+        
+        {
+            "status": "OK",
+            "data": [
+                {
+                    "id": "123",
+                    "label": "The Hitchhiker's Guide to the Galaxy",
+                    "author": "Douglas Adams",
+                    "owner": "2",
+                    "reciever": ""
+                    "genres": ["2"]
+                
+                }, {
+                    "id": "2",
+                    "label": "Material Guidelines",
+                    "author": "author3",
+                    "owner": "3",
+                    "reciever": ""
+                    "genres": ["1","7"]
+                }
+            ]
+        }
+        
+        
+### Add Book [POST]
+
++ Request 
+
+                {
+                    "label": "book3",
+                    "author": "author1",
+                    "owner": "2",
+                    "reciever": ""
+                    "genres": ["1","4","8"]
+                    
+                }
+
+
++ Response 201 (application/json)
+
+
+        {
+            "status": "OK",
+            "data": {
+                    "id": "3"
+                    "label": "book3",
+                    "author": "author1",
+                    "owner": "2",
+                    "reciever": ""
+                    "genres": ["1","4","8"]
+                }
+            
+        }
 
 ### BookShelf [/bookshelf]
 
@@ -34,54 +109,51 @@ BookCrossing -
 
 + Response 200 (application/json)
 
-        [
-            {
-                "status": "OK",
-                "data": [
-                    {
-                        "id": "1",
-                        "label": "book1",
-                        "author": "author1",
-                        "owner": "2",
-                        "reciever": "1"
-                        "genres": ["1","4","8"]
-                        
-                    }, {
-                        "id": "2",
-                        "label": "book2",
-                        "author": "author1",
-                        "owner": "3",
-                        "reciever": "1"
-                        "genres": ["1","7"]
-                    }
-                ]
-            }
-        ]
+        {
+            "status": "OK",
+            "data": [
+                {
+                    "id": "1",
+                    "label": "book1",
+                    "author": "author1",
+                    "owner": "2",
+                    "reciever": "1"
+                    "genres": ["1","4","8"]
+                    
+                }, {
+                    "id": "2",
+                    "label": "book2",
+                    "author": "author1",
+                    "owner": "3",
+                    "reciever": "1"
+                    "genres": ["1","7"]
+                }
+            ]
+        }
+        
         
 
 ### Get Shared Books [GET/bookshelf/shared/1]
 + Response 200 (application/json)
 
-        [
-            {
-                "status": "OK",
-                "data": [
-                    {
-                        "id": "1",
-                        "label": "book1",
-                        "author": "author1",
-                        "owner": "2",
-                        "reciever": "1"
-                        "genres": ["1","4","8"]
-                        
-                    }, {
-                        "id": "2",
-                        "label": "book2",
-                        "author": "author1",
-                        "owner": "3",
-                        "reciever": "1"
-                        "genres": ["1","7"]
-                    }
-                ]
+        {
+            "status": "OK",
+            "data": [
+                {
+                    "id": "1",
+                    "label": "book1",
+                    "author": "author1",
+                    "owner": "2",
+                    "reciever": "1"
+                    "genres": ["1","4","8"]
+                    
+                }, {
+                    "id": "2",
+                    "label": "book2",
+                    "author": "author1",
+                    "owner": "3",
+                    "reciever": "1"
+                    "genres": ["1","7"]
             }
-        ]
+            ]
+        }
