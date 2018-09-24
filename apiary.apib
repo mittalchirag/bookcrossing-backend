@@ -114,8 +114,34 @@ This feature  also searching by author.
 + Response 200 (application/json)
 
             {
-                "status": "OK",
+                "status": "OK"
             }
+### Approve Book Request [POST/books/approve]
+
++ Request (application/json)
+
+            {
+                "user_id":  "1",
+                "book_id": "2"
+            }
+            
++ Response 201 (application/json)
+
+    + Body
+
+            {
+              "status": "OK",
+                "data": {
+                    "id": "1",
+                    "label": "book1",
+                    "author": "author1",
+                    "owner": "2",
+                    "reciever": "1"
+                    "genres": ["1","4","8"]
+                    "language":"rus"
+                }
+            }
+            
 
 
 ### BookShelf [/bookshelf]
@@ -177,12 +203,12 @@ This feature  also searching by author.
             ]
         }
         
-### Users [/users]
+## Users [/users]
 
 ### Get User By ID[GET/users/3]
+
 + Response 200 (application/json)
-    
-    
+
         {
             "status": "OK",
             "data": 
@@ -198,9 +224,10 @@ This feature  also searching by author.
             }
         }
         
-### Create User [POST/users]
+### Create New User [POST/users]
+
 + Request (application/json)
-        
+
         {
                 "login":"SrgGrch",
                 "university":"NSTU",
@@ -213,14 +240,14 @@ This feature  also searching by author.
 
 
 + Response 201 (application/json)
-        
-    
+
         {
             "status": "OK",
             "data": 
             {
                 "id":"1",
                 "login":"SrgGrch",
+                "name": "Sergey G."
                 "university":"NSTU",
                 "email":"example@stud.nstu.ru",
                 "password":"qwer2017",
@@ -229,3 +256,19 @@ This feature  also searching by author.
                 "rating":"4.3"
             }
         }
+        
+### Delete User By ID [DELETE/users/3]
+
++ Response 200 (application/json)
+
+            {
+                "status": "OK"
+            }
+            
+### Update User By ID [PUT/users/1]
+
++ Response 200 (application/json)
+
+            {
+                "name": "Sergey"
+            }
